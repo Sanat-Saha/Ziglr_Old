@@ -1,0 +1,503 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.sanatkumarsaha.navigation_drawer.Filter">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/apply"
+        >
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="13">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Distance"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/distance2"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/distance"
+                android:layout_weight="1"
+                android:gravity="right" />
+        </LinearLayout>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/distancebar"
+                android:max="300"
+                android:progress="50"
+                android:indeterminate="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Rating"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/rating" />
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/ratingbar"
+            android:indeterminate="false"
+            android:max="5"
+            android:progress="2"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Sex Ratio {F}"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/sexr" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%-25%"
+                android:id="@+id/ffirst"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="ratioClicked"/>
+
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25%-50%"
+                android:id="@+id/fsecond"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="ratioClicked"/>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50%-75%"
+                android:id="@+id/fthird"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="ratioClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="75%-100%"
+                android:id="@+id/ffourth"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="ratioClicked"/>
+
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Occupancy"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/crowd"
+                />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0%-25%"
+                android:id="@+id/ofirst"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="occupancyClicked"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="25%-50%"
+                android:id="@+id/osecond"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="occupancyClicked"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="50%-75%"
+                android:id="@+id/othird"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="occupancyClicked"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="75%-100%"
+                android:id="@+id/ofourth"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="occupancyClicked"/>
+
+        </LinearLayout>
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Avarage Age"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/age" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21-25"
+                android:id="@+id/afirst"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:onClick="ageClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25-30"
+                android:id="@+id/asecond"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:onClick="ageClicked"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30-40"
+                android:onClick="ageClicked"
+                android:id="@+id/athird"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40 above"
+                android:onClick="ageClicked"
+                android:id="@+id/afourth"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="left" />
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Entry Fee"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/fee"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0-1K"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/efirst"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:onClick="feeClicked"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1-2K"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/esecond"
+                android:layout_weight="1"
+                android:onClick="feeClicked"
+                android:padding="2dp"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2-3K"
+                android:onClick="feeClicked"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/ethird"
+                android:layout_weight="1"
+                android:padding="2dp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3K above"
+                android:onClick="feeClicked"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/efourth"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Entry Type"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/type" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Only Couple"
+                android:id="@+id/typeCheck"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:checked="false"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Open/Close"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/open" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:id="@+id/switch_open"
+            android:layout_gravity="center_horizontal"
+            android:textOff="Closed"
+            android:textOn="Open"
+            android:typeface="sans"
+            android:onClick="switch_click"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Music Type"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/music" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:id="@+id/all"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:onClick="allClicked"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bollywood"
+                        android:id="@+id/bollywood"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:onClick="music_clicked"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hip-Hop"
+                        android:id="@+id/hiphop"
+                        android:onClick="music_clicked"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EDM"
+                    android:onClick="music_clicked"
+                    android:id="@+id/edm"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pop"
+                    android:id="@+id/pop"
+                    android:onClick="music_clicked"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drum and Bass"
+                    android:id="@+id/drum"
+                    android:onClick="music_clicked"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jazz"
+                    android:id="@+id/jazz"
+                    android:onClick="music_clicked"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rock"
+                        android:onClick="music_clicked"
+                        android:id="@+id/rock"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Metal"
+                        android:id="@+id/metal"
+                        android:onClick="music_clicked"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Live Music"
+                        android:id="@+id/live"
+                        android:onClick="music_clicked"
+                        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:id="@+id/apply"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="applyClicked"
+        android:paddingRight="0dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default"
+        android:paddingLeft="0dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/applydefault"
+        android:onClick="defaultClicked" />
+
+</RelativeLayout>
